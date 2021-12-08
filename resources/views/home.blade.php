@@ -421,9 +421,9 @@ http://www.templatemo.com/tm-497-upper
                     <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
                 </div>
                 
-                <p class="tm-copyright-text">Copyright &copy; 2016 Your Company 
+                <p class="tm-copyright-text">UNITEN R&D SDN BHD (URND) 
                 
-                - Design: <a rel="nofollow" href="http://www.templatemo.com/page/1" class="tm-footer-link" target="_parent">Templatemo</a></p>
+            
 
             </footer>
                     
