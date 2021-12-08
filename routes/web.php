@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeControl;
+use App\Http\Controllers\adminControl;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get("/redirect",[homeControl::class,"redirectFunct"]);
+Route::get("/users",[adminControl::class,"user"]);
 
