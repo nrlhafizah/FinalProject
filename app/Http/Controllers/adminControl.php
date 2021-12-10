@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lists;
 
 class adminControl extends Controller
 {
     public function list()
     {
-        return view("admin.list");
+        $data=lists::all();
+        return view("admin.list",compact("data"));
     }
 }
