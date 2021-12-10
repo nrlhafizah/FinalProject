@@ -9,5 +9,5 @@ class project extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public $table="project";
+    public $table="newproject";
 }

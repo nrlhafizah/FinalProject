@@ -27,9 +27,9 @@
 					<h2 class="heading-section">Create Projects</h2><br><br>
 					<form>
 					<label for="radio"><h3 class="h5 mb-4 text-center">Category:</h3></label><br>
-					<input type="radio" id="research" name="research" value="research">
+					<input type="radio" id="category" name="category" value="research">
   					<label for="html">Research</label><br>
-					<input type="radio" id="consultancy" name="research" value="consultancy">
+					<input type="radio" id="category" name="category" value="consultancy">
   					<label for="css">Consultancy</label><br><br><br>
   					<label for="pname"><h3 class="h5 mb-4 text-center">Project Name:</h3></label><br>
   					<input type="text" id="pname" name="pname"><br>
@@ -44,6 +44,7 @@
 						  <thead class="thead-primary">
 						    <tr>
 							<th>&nbsp;&nbsp;</th>
+							<th>ID</th>
 						    	<th>Name</th>
 						      <th>Email</th>
 							  <th>Location</th>
@@ -55,10 +56,11 @@
 							  @foreach($data as $data)
 							  <tr>
 							  <td><input type="radio" id="leader" name="leader" value="leader"></td>
+							  	<td>{{$data->id}}</td>
 								  <td>{{$data->name}}</td>
 								  <td>{{$data->email}}</td>
 								  <td>{{$data->location}}</td>
-								  <th>&nbsp;&nbsp;</th>
+								  <td>&nbsp;&nbsp;</td>
 								  @endforeach
 								  </tbody>
 							</tr>

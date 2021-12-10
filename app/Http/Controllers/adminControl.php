@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Lists;
+use App\Models\Log;
 use App\Models\project;
 
 class adminControl extends Controller
 {
     public function list()
     {
-        $data=Lists::all();
+        $data=Log::all();
         return view("admin.list",compact("data"));
     }
 
@@ -20,7 +20,8 @@ class adminControl extends Controller
     {
         $project = new project;
 
-        $project->research=$req->research;
+        $project->id=$req->id;
+        $project->category=$req->category;
         $project->pname=$req->pname;
         $project->leader=$req->leader;
         $project->save();
