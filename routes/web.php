@@ -29,3 +29,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get("/redirect",[homeControl::class,"redirectFunct"]);
 Route::get("/list",[adminControl::class,"list"]);
 
+Route::view('test', 'admin.list');
+Route::POST("add",[adminControl::class,'addProject']);
+
