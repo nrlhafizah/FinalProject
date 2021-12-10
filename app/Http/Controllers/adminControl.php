@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class adminControl extends Controller
 {
-    public function user()
+    public function list()
     {
-        return view("admin.users");
+        return view("admin.list");
     }
 }

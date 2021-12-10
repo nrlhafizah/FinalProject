@@ -27,5 +27,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get("/redirect",[homeControl::class,"redirectFunct"]);
-Route::get("/users",[adminControl::class,"user"]);
+Route::get("/list",[adminControl::class,"list"]);
 
