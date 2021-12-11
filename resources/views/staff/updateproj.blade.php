@@ -20,11 +20,24 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-4">
-                <input type="button" value="Go back!" onclick="history.back()"><br><br>
+				<form action = "/edit" method = "post">
+					@csrf
+ 				<input type="button" value="Go back!" onclick="history.back()"><br><br>
 				
-					
+					<h2 class="heading-section">Create Projects</h2><br><br>
 					<form>
-			
+				
+  					<label for="start"><h3 class="h5 mb-4 text-center">Start Date:</h3></label><br>
+  					<input type="text" id="start" name="start"><br>
+                      <label for="end"><h3 class="h5 mb-4 text-center">End Date:</h3></label><br>
+  					<input type="text" id="end" name="end"><br>
+                      <label for="duration"><h3 class="h5 mb-4 text-center">Duration:</h3></label><br>
+  					<input type="text" id="duration" name="duration"><br>
+                      <label for="cost"><h3 class="h5 mb-4 text-center">Cost:</h3></label><br>
+  					<input type="text" id="cost" name="cost"><br>
+                      <label for="client"><h3 class="h5 mb-4 text-center">Client:</h3></label><br>
+  					<input type="text" id="client" name="client"><br>
+
 					
 				</div>
 			</div>
@@ -37,10 +50,10 @@
 						    <tr>
 						
 							<th>ID</th>
-						    	<th>Category</th>
-						      <th>Project Name</th>
-							  <th>Project Leader</th>
-							  <th>&nbsp;</th>
+						    	<th>Name</th>
+						      <th>Email</th>
+							  <th>Location</th>
+							  <th>&nbsp;&nbsp;</th>
 							  
 						      
 						    </tr>
@@ -50,10 +63,11 @@
 							  <tr>
 							  
 							  	<td>{{$data['id']}}</td>
-								  <td>{{$data['category']}}</td>
-								  <td>{{$data['pname']}}</td>
-								  <td>{{$data['leader']}}</td>
-                                <td><a href={{"upd/".$data['id']}}>Update</a></href></td>
+								  <td>{{$data['name']}}</td>
+								  <td>{{$data['email']}}</td>
+								  <td>{{$data['location']}}</td>
+
+                                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
 
 								  @endforeach
 								  </tbody>
@@ -68,7 +82,7 @@
 			<section>
 			<div class="row justify-content-center">
 			<div class="col-md-6 text-center mb-4">
-				
+				<br><button type="submit">Update</button>
 			</div>
 			</form>
 </form>

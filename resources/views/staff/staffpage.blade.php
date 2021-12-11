@@ -16,7 +16,7 @@
 	</head>
 <body>
     <nav class="navMenu">
-      <a href="{{url('/list')}}">List project</a>&emsp;&emsp;&emsp;&emsp;
+      <a href="{{url('/listproject')}}">List project</a>&emsp;&emsp;&emsp;&emsp;
       <a href="#">Update Progress</a>&emsp;&emsp;&emsp;&emsp;
       <a href="#">Logout</a>
       <div class="dot"></div>
