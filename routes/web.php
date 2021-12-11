@@ -40,3 +40,6 @@ Route::view('test1', 'staff.staffpage');
 Route::get('upd/{id}',[staffControl::class,"showlist"]);
 Route::POST("edit",[staffControl::class,'update']);
 
+Route::get("/projectprogress",[staffControl::class,"showprog"]);
+
+

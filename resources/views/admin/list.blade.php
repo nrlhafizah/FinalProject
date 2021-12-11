@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="admin/assets1/css/style.css">
+	<link rel="stylesheet" href="staff/assets1/css/style.css">
 
 	
 
@@ -80,24 +80,15 @@
 				<br><button type="submit">Create</button>
 			</div>
 			</form>
-</form>
-		</div>
-
-</section>
-			
-</section>
-
-
-
-								  
-								 
-
+		</div>				  
+</section>					 
+	</section>
 						   
 
-	<script src="admin/assets1/js/jquery.min.js"></script>
-  <script src="admin/assets1/js/popper.js"></script>
-  <script src="admin/assets1/js/bootstrap.min.js"></script>
-  <script src="admin/assets1/js/main.js"></script>
+	<script src="staff/assets1/js/jquery.min.js"></script>
+  <script src="staff/assets1/js/popper.js"></script>
+  <script src="staff/assets1/js/bootstrap.min.js"></script>
+  <script src="staff/assets1/js/main.js"></script>
   
 	</body>
 

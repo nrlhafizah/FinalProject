@@ -10,22 +10,18 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="staff/assets1/css/style.css">
-
-	
-
-	</head>
+</head>
 	<body>
 
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-4">
-				<form action = "/edit" method = "post">
-					@csrf
- 				<input type="button" value="Go back!" onclick="history.back()"><br><br>
 				
+				<form action = "/edit" method = "post">
+					@csrf			
+					<input type="button" value="Go back!" onclick="history.back()"><br><br>	
 					<h2 class="heading-section">Create Projects</h2><br><br>
-					<form>
 				
   					<label for="start"><h3 class="h5 mb-4 text-center">Start Date:</h3></label><br>
   					<input type="text" id="start" name="start"><br>
@@ -85,19 +81,13 @@
 				<br><button type="submit">Update</button>
 			</div>
 			</form>
-</form>
+
 		</div>
 
 </section>
 			
 </section>
 
-
-
-								  
-								 
-
-						   
 
 	<script src="staff/assets1/js/jquery.min.js"></script>
   <script src="staff/assets1/js/popper.js"></script>

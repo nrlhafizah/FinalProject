@@ -29,7 +29,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<br><h3 class="h5 mb-4 text-center">List name of UNITEN staff</h3>
+					<br><h3 class="h5 mb-4 text-center">PROJECT PROGRESS</h3>
 					<div class="table-wrap">
 						<table class="table">
 						  <thead class="thead-primary">
@@ -39,7 +39,9 @@
 						    	<th>Category</th>
 						      <th>Project Name</th>
 							  <th>Project Leader</th>
-							  <th>&nbsp;</th>
+                              <th>Project Stage</th>
+                              <th>Project Status</th>
+					
 							  
 						      
 						    </tr>
@@ -52,7 +54,7 @@
 								  <td>{{$data['category']}}</td>
 								  <td>{{$data['pname']}}</td>
 								  <td>{{$data['leader']}}</td>
-                                <td><a href={{"upd/".$data['id']}}>Update</a></href></td>
+                                
 
 								  @endforeach
 								  </tbody>
@@ -79,11 +81,7 @@
 
 
 
-								  
-								 
-
-						   
-
+							
 	<script src="staff/assets1/js/jquery.min.js"></script>
   <script src="staff/assets1/js/popper.js"></script>
   <script src="staff/assets1/js/bootstrap.min.js"></script>

@@ -17,8 +17,8 @@
 <body>
     <nav class="navMenu">
       <a href="{{url('/listproject')}}">List project</a>&emsp;&emsp;&emsp;&emsp;
-      <a href="#">Update Progress</a>&emsp;&emsp;&emsp;&emsp;
-      <a href="#">Logout</a>
+      <a href="{{url('/projectprogress')}}">Update Progress</a>&emsp;&emsp;&emsp;&emsp;
+      <a href="{{url('/')}}">Logout</a>
       <div class="dot"></div>
     </nav>
   </body>

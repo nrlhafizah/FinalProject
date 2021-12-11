@@ -16,6 +16,12 @@ class staffControl extends Controller
         $data=project::all();
         return view('staff.listproject',['data'=>$data]);
     }
+    public function showprog()
+    {
+        $data=project::all();
+        return view('staff.listproject',['data'=>$data]);
+    }
+  
 
     function showlist()
     {
