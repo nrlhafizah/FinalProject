@@ -22,7 +22,8 @@ class homeControl extends Controller
         }
         else
         {
-            return view('home');
+            return view('staff.staffpage');
         }
     }
+    
 }

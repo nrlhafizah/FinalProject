@@ -43,24 +43,27 @@
 						<table class="table">
 						  <thead class="thead-primary">
 						    <tr>
-							<th>&nbsp;&nbsp;</th>
+						
 							<th>ID</th>
 						    	<th>Name</th>
 						      <th>Email</th>
 							  <th>Location</th>
 							  <th>&nbsp;&nbsp;</th>
+							  
 						      
 						    </tr>
 						  </thead>
 						  <tbody>
 							  @foreach($data as $data)
 							  <tr>
-							  <td><input type="radio" id="leader" name="leader" value="leader"></td>
-							  	<td>{{$data->id}}</td>
-								  <td>{{$data->name}}</td>
-								  <td>{{$data->email}}</td>
-								  <td>{{$data->location}}</td>
-								  <td>&nbsp;&nbsp;</td>
+							  
+							  	<td>{{$data['id']}}</td>
+								  <td>{{$data['name']}}</td>
+								  <td>{{$data['email']}}</td>
+								  <td>{{$data['location']}}</td>
+
+									<td><input type="radio" id="leader" name="leader" value={{($data->id)}}></td>
+
 								  @endforeach
 								  </tbody>
 							</tr>
