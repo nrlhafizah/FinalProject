@@ -20,7 +20,7 @@
 
   <li>
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                
                     @auth
                     <x-app-layout>
 
@@ -51,7 +51,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-4">
 				
-					
+				<button type="button">Update</button>
 					<form>
 			
 					
@@ -59,7 +59,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<br><h3 class="h5 mb-4 text-center">Project Assigned</h3>
+					
 					<div class="table-wrap">
 						<table class="table">
 						  <thead class="thead-primary">

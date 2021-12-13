@@ -20,18 +20,23 @@ use App\Http\Controllers\staffControl;
  //   return view('welcome');
 //});
 
+//Route::get("/",[homeControl::class,"index"]);
+
 Route::get("/",[homeControl::class,"index"]);
 
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+   return view('dashboard');
 })->name('dashboard');
 
 Route::get("/redirect",[homeControl::class,"redirectFunct"]);
 Route::get("/list",[adminControl::class,"list"]);
 
+Route::get("/adminpage",[homeControl::class,"indexadmin"]);
+Route::get("/createproject",[homeControl::class,"test2"]);
 
-Route::view('test', 'admin.adminpage');
+
+
+Route::view('test', 'admin.list');
 Route::POST("add",[adminControl::class,'addProject']);
 
 Route::get("/listproject",[staffControl::class,"show"]);

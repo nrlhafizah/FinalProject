@@ -18,28 +18,32 @@
 	
 	<link rel="stylesheet" href="admin/assets/libs/css/style.css">
 
-  <li>
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                    <x-app-layout>
-
-                    </x-app-layout>
-                    @else
-                        <li><a href="{{ route('login') }}" class="scroll-to-section">Log in</a></li>
-
-                        @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}" class="scroll-to-section">Register</a></li>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </li>   
+  
 		<nav class="navMenu">
 			
-      <a href="{{url('/listproject')}}">List project</a>&emsp;&emsp;&emsp;&emsp;
-      <a href="{{url('/updateproj')}}">Update Progress</a>&emsp;&emsp;&emsp;&emsp;
-      <div class="dot"></div>
+      <a href="{{url('/list')}}">Create Project</a>&emsp;&emsp;&emsp;&emsp;
+      <a href="#">View Progress</a>&emsp;&emsp;&emsp;&emsp;
+	  
+	  
+		  @auth
+		  
+		  <form method="POST" action="{{ route('logout') }}">
+		  
+		  @csrf
+
+		  <a href="{{ route('logout') }}"
+						 onclick="event.preventDefault();
+						  this.closest('form').submit();" >
+			  {{ __('Log Out') }}
+
+</a>
+	  </form>
+	  </nav>
+</a>
+		  @endauth
+	  </div>
+
+
     </nav>
 	
 

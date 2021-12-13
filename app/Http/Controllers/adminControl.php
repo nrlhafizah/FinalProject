@@ -18,13 +18,13 @@ class adminControl extends Controller
 
     function addProject(Request $req)
     {
-        $project = new project;
+        $data = new project;
 
-        $project->id=$req->id;
-        $project->category=$req->category;
-        $project->pname=$req->pname;
-        $project->leader=$req->leader;
-        $project->save();
+        $data->id=$req->id;
+        $data->category=$req->category;
+        $data->pname=$req->pname;
+        $data->leader=$req->leader;
+        $data->save();
 
         return redirect('test');
     }

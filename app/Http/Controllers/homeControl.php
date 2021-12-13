@@ -15,15 +15,25 @@ class homeControl extends Controller
         return view("home");
     }
 
+    function indexadmin()
+    {
+        return view("admin.adminpage");
+    }
+
+    function test2()
+    {
+        return view("admin.createproject");
+    }
+
+
     function redirectFunct()
     {
         $typeuser=Auth::user()->usertype;
 
         if($typeuser=='1')
         {
-            $data=Log::all();
-            return view("admin.list",compact("data"));
-            return view('admin.list');
+           
+            return view('admin.adminpage');
         }
         else
         {
