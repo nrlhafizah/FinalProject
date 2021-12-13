@@ -35,8 +35,11 @@ Route::view('test', 'admin.adminpage');
 Route::POST("add",[adminControl::class,'addProject']);
 
 Route::get("/listproject",[staffControl::class,"show"]);
+Route::get("/updateproj",[staffControl::class,"showlist"]);
 
 Route::view('test1', 'staff.staffpage');
 Route::get('upd/{id}',[staffControl::class,"showlist"]);
 Route::POST("edit",[staffControl::class,'update']);
+
+
 

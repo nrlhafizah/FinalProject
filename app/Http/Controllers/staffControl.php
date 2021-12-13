@@ -39,4 +39,6 @@ class staffControl extends Controller
         return redirect('test1');
     }
 
+ 
+
 }

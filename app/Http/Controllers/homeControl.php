@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\project;
+use App\Models\Log;
+
 class homeControl extends Controller
 {
     function index()
@@ -18,11 +21,15 @@ class homeControl extends Controller
 
         if($typeuser=='1')
         {
-            return view('admin.adminpage');
+            $data=Log::all();
+            return view("admin.list",compact("data"));
+            return view('admin.list');
         }
         else
         {
-            return view('staff.staffpage');
+            $data=project::all();
+            return view('staff.listproject',['data'=>$data]);
+     
         }
     }
     

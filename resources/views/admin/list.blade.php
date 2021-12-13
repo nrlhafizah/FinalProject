@@ -9,8 +9,38 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="admin/assets1/css/style.css">
+	<link rel="stylesheet" href="staff/assets1/css/style.css">
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="admin/assets/libs/css/style.css">
+
+  <li>
+            @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                    <x-app-layout>
+
+                    </x-app-layout>
+                    @else
+                        <li><a href="{{ route('login') }}" class="scroll-to-section">Log in</a></li>
+
+                        @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}" class="scroll-to-section">Register</a></li>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </li>   
+		<nav class="navMenu">
+			
+      <a href="{{url('/listproject')}}">List project</a>&emsp;&emsp;&emsp;&emsp;
+      <a href="{{url('/updateproj')}}">Update Progress</a>&emsp;&emsp;&emsp;&emsp;
+      <div class="dot"></div>
+    </nav>
 	
 
 	</head>
@@ -22,7 +52,7 @@
 				<div class="col-md-6 text-center mb-4">
 				<form action = "/add" method = "post">
 					@csrf
- 				<input type="button" value="Go back!" onclick="history.back()"><br><br>
+ 		
 				
 					<h2 class="heading-section">Create Projects</h2><br><br>
 					<form>
@@ -33,6 +63,7 @@
   					<label for="css">Consultancy</label><br><br><br>
   					<label for="pname"><h3 class="h5 mb-4 text-center">Project Name:</h3></label><br>
   					<input type="text" id="pname" name="pname"><br>
+			
 					
 				</div>
 			</div>
@@ -57,7 +88,7 @@
 							  @foreach($data as $data)
 							  <tr>
 							  
-							  	<td>{{$data['id']}}</td>
+                              <td>{{$data['id']}}</td>
 								  <td>{{$data['name']}}</td>
 								  <td>{{$data['email']}}</td>
 								  <td>{{$data['location']}}</td>
@@ -74,31 +105,19 @@
 					</div>
 				</div>
 			</div>
-			<section>
-			<div class="row justify-content-center">
-			<div class="col-md-6 text-center mb-4">
-				<br><button type="submit">Create</button>
+
+
+				
 			</div>
 			</form>
 </form>
 		</div>
 
-</section>
+
 			
 </section>
 
 
-
-								  
-								 
-
-						   
-
-	<script src="admin/assets1/js/jquery.min.js"></script>
-  <script src="admin/assets1/js/popper.js"></script>
-  <script src="admin/assets1/js/bootstrap.min.js"></script>
-  <script src="admin/assets1/js/main.js"></script>
-  
 	</body>
 
 </html>
