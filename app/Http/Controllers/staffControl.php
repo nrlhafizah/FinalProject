@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\project;
 use App\Models\Staff;
 use App\Models\User;
+use App\Models\project;
 
 class staffControl extends Controller
 {
@@ -18,10 +18,12 @@ class staffControl extends Controller
     }
 
 
-    function showlist()
+    function showlist($project_id)
     {
-        $data=project::all();
-        return view("staff.updateproj",compact("data"));
+        $data=project::find($project_id);
+        $userdata=User::all();
+
+        return view('staff.action',['data'=>$data], ['userdata'=>$userdata]);
 
     }
 
@@ -34,8 +36,10 @@ class staffControl extends Controller
     function updateProject(Request $req)
     {
 
-        
-        $upd= new Staff;
+        //$id= $req->input('project_id');
+        $upd=project::find($req->project_id);
+
+        if(!is_null($upd)){
 
         $upd->member=$req->member;
         $upd->start_date=$req->sdate;
@@ -46,6 +50,8 @@ class staffControl extends Controller
         $upd->stage=$req->stage;
         $upd->progress=$req->progress;
         $upd->save();
+
+        }
 
         return redirect('stf');
     }

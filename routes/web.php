@@ -41,12 +41,17 @@ Route::get("/listproject",[homeControl::class,"leader1"]);
 Route::view('create', 'admin.adminpage');
 Route::POST("add",[homeControl::class,'addProject']);
 
-Route::view('stf', 'staff.staffpage');
-Route::POST("action",[staffControl::class,'updateProject']);
+//Route::view('stf', 'staff.staffpage');
+// Route::POST("action",[staffControl::class,'updateProject']);
 
 Route::get("/createproject",[homeControl::class,"show"]);
-Route::get("/action",[staffControl::class,"showw"]);
-Route::get("/updateproj",[staffControl::class,"showlist"]);
+//Route::get("/action",[staffControl::class,"showw"]);
+
+Route::get('upd/{id}',[staffControl::class,'showlist']);
+Route::POST("action",[staffControl::class,'updateProject']);
+Route::view('stf', 'staff.staffpage');
+
+
 
 //Route::view('test1', 'staff.staffpage');
 //Route::get('upd/{id}',[staffControl::class,"showlist"]);

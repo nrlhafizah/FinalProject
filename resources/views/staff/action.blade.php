@@ -74,15 +74,19 @@ body{
 
 <body>
 
+
   <form action="/action" method="post" class="form-container">
+
+  <b>Project Name</b><br>
+    <input type="text" value="{{$data->project_name}}"  name="pname" readonly><br>
       @csrf
   <label for="members"><b> Team Member</b></label><br><br>
   <select name="member" width=100 style="width: 460px">
-@foreach($data as $data)
-@if ($data->usertype=='0')
-<option value="{{$data->id}}">{{$data->name}}</option>
-@endif
-@endforeach
+  @foreach($userdata as $d)
+  @if ($d->usertype=='0')
+  <option value="{{$d->id}}">{{$d->name}}</option>
+  @endif
+  @endforeach
 
 
 </select>
@@ -120,7 +124,7 @@ body{
 									</select><br><br>
 			
 
-    <input type="submit" value="update" />
+    <button type="submit">UPDATE</button>
     
   </form>
 </div>

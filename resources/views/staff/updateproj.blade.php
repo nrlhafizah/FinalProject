@@ -261,10 +261,10 @@ form button.src-btn a:hover {text-decoration:underline;}
 						    <tr>
 								<th>ID</th>
 						      	<th>Project Name</th>
-                                  <th>Start Date</th>
-                                  <th>End Date</th>
-                                  <th>Cost</th>
-                                  <th>Client</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Cost</th>
+                                <th>Client</th>
 								<th>Project Stage</th>
 								<th>Project Status</th>
 							  

@@ -293,7 +293,7 @@ form button.src-btn a:hover {text-decoration:underline;}
 
 									  @endif
 								  </td>
-                                  <td><button><a href={{url('/action')}}>Edit</button></td></a>
+                                  <td><button><a href={{"upd/".$view->project_id}}>Edit</a></button></td>
                                 </tr>
 							@endforeach
 							

@@ -11,5 +11,7 @@ class Staff extends Model
 
 
     public $timestamps = false;
-    public $table="project_progress";
+    public $table="project";
+
+    protected $primaryKey = 'project_id';
 }
