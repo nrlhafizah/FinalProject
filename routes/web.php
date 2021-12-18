@@ -22,6 +22,10 @@ use App\Http\Controllers\staffControl;
 
 //Route::get("/",[homeControl::class,"index"]);
 
+Route::get('/action', function () {
+    return view('staff.action');
+});
+
 Route::get("/",[homeControl::class,"index"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -29,22 +33,24 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get("/redirect",[homeControl::class,"redirectFunct"]);
-Route::get("/list",[adminControl::class,"list"]);
 
-Route::get("/adminpage",[homeControl::class,"indexadmin"]);
-Route::get("/createproject",[homeControl::class,"test2"]);
+Route::get("/createproject",[homeControl::class,"addProject"]);
+Route::get("/list",[homeControl::class,"leader"]);
+Route::get("/listproject",[homeControl::class,"leader1"]);
 
+Route::view('create', 'admin.adminpage');
+Route::POST("add",[homeControl::class,'addProject']);
 
+Route::view('stf', 'staff.staffpage');
+Route::POST("action",[staffControl::class,'updateProject']);
 
-Route::view('test', 'admin.list');
-Route::POST("add",[adminControl::class,'addProject']);
-
-Route::get("/listproject",[staffControl::class,"show"]);
+Route::get("/createproject",[homeControl::class,"show"]);
+Route::get("/action",[staffControl::class,"showw"]);
 Route::get("/updateproj",[staffControl::class,"showlist"]);
 
-Route::view('test1', 'staff.staffpage');
-Route::get('upd/{id}',[staffControl::class,"showlist"]);
-Route::POST("edit",[staffControl::class,'update']);
+//Route::view('test1', 'staff.staffpage');
+//Route::get('upd/{id}',[staffControl::class,"showlist"]);
+//Route::POST("edit",[staffControl::class,'update']);
 
 
 

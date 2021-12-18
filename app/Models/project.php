@@ -9,12 +9,6 @@ class project extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public $table="project";
 
-    protected $table="newproject";
-
-    protected $fillable= [
-        'category',
-        'pname',
-        'leader'
-    ];
-}
+};

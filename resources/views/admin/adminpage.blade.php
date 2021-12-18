@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>PM page</title>
+        <title>URND</title>
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,12 +18,14 @@
 <body>
         <div class="sidebar-navigation hidde-sm hidden-xs">
             <div class="logo">
-                <a href="#">UR<em>ND</em></a>
+                <a href="#">URND</a>
             </div>
+            
             <nav>
                 <ul>
+                    <p>Welcome, Project Manager!</p>
                     <li>
-                        <a href="{{url('/adminpage')}}">
+                        <a href="/redirect">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Home
@@ -37,7 +39,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{url('/list')}}">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             View Progress

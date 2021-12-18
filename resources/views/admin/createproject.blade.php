@@ -57,7 +57,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
 	background-color: #e8eeef;
-	color:#8a97a0;
+	color:#000;
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 30px;
@@ -97,7 +97,7 @@
 {
 	position: relative;
 	display: block;
-	padding: 19px 39px 18px 39px;
+	padding: 19px 20px 18px 20px;
 	color: #FFF;
 	margin: 0 auto;
 	background: #1abc9c;
@@ -107,7 +107,7 @@
 	width: 100%;
 	border: 1px solid #16a085;
 	border-width: 1px 1px 3px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
@@ -124,8 +124,9 @@
             </div>
             <nav>
                 <ul>
+                <p>Welcome, Project Manager!</p>
                     <li>
-                        <a href="{{url('/adminpage')}}">
+                        <a href="/redirect">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Home
@@ -139,7 +140,7 @@
                         </a>
                     </li>
                     <li>
-                    <a href="{{url('/createproject')}}">
+                    <a href="{{url('/list')}}">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             View Progress
@@ -177,31 +178,28 @@
                     <div class="info">
                        
 <div class="form-style-5">
-<form>
+<form action="/add" method="post">
+    @csrf
 <fieldset>
 <legend><span class="number">1</span> Project Info</legend>
-<input type="text" name="field1" placeholder="Category Project">
-<input type="email" name="field2" placeholder="Project Title">
+
+<select id="type" name="type">
+<option value="1">Research Project</option>
+<option value="2">Consultancy Project</option>
+</select>
+
+<textarea name="name" placeholder="Project Title"></textarea>
 
 <legend><span class="number">2</span> Project Leader</legend>
-<select id="job" name="field3">
-<optgroup label="Indoors">
-  <option value="fishkeeping">Fishkeeping</option>
-  <option value="reading">Reading</option>
-  <option value="boxing">Boxing</option>
-  <option value="debate">Debate</option>
-  <option value="gaming">Gaming</option>
-  <option value="snooker">Snooker</option>
-  <option value="other_indoor">Other</option>
-</optgroup>
-<optgroup label="Outdoors">
-  <option value="football">Football</option>
-  <option value="swimming">Swimming</option>
-  <option value="fishing">Fishing</option>
-  <option value="climbing">Climbing</option>
-  <option value="cycling">Cycling</option>
-  <option value="other_outdoor">Other</option>
-</optgroup>
+
+<select id="select" name="select">
+
+    @foreach($data as $data)
+    @if ($data->usertype=='0')
+    <option value="{{$data->id}}">{{$data->name}}</option>
+    @endif
+    @endforeach
+  
 </select>      
 </fieldset>
 <input type="submit" value="Apply" />

@@ -11,5 +11,5 @@ class Staff extends Model
 
 
     public $timestamps = false;
-    public $table="detailproj";
+    public $table="project_progress";
 }
