@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeControl;
-use App\Http\Controllers\adminControl;
 use App\Http\Controllers\staffControl;
 
 /*
@@ -20,7 +19,6 @@ use App\Http\Controllers\staffControl;
  //   return view('welcome');
 //});
 
-//Route::get("/",[homeControl::class,"index"]);
 
 Route::get('/action', function () {
     return view('staff.action');
@@ -38,24 +36,18 @@ Route::get("/createproject",[homeControl::class,"addProject"]);
 Route::get("/list",[homeControl::class,"leader"]);
 Route::get("/listproject",[homeControl::class,"leader1"]);
 
+Route::get("/detail",[homeControl::class,"showDetail"]);
+Route::get('det/{id}',[homeControl::class,'showDetail']);
+
 Route::view('create', 'admin.adminpage');
 Route::POST("add",[homeControl::class,'addProject']);
 
-//Route::view('stf', 'staff.staffpage');
-// Route::POST("action",[staffControl::class,'updateProject']);
-
 Route::get("/createproject",[homeControl::class,"show"]);
-//Route::get("/action",[staffControl::class,"showw"]);
 
 Route::get('upd/{id}',[staffControl::class,'showlist']);
 Route::POST("action",[staffControl::class,'updateProject']);
 Route::view('stf', 'staff.staffpage');
 
-
-
-//Route::view('test1', 'staff.staffpage');
-//Route::get('upd/{id}',[staffControl::class,"showlist"]);
-//Route::POST("edit",[staffControl::class,'update']);
 
 
 

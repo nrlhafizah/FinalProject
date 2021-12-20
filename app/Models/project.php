@@ -14,7 +14,7 @@ class project extends Model
     protected $primaryKey = 'project_id';
 
     protected $fillable = [
-        'project_id','project_category', 'project_name', 'project_leader', 'member', 'start_date', 
+        'project_category', 'project_name', 'project_leader', 'member', 'start_date', 
          'end_date', 'duration', 'cost', 'client', 'stage', 'progress'
     ];
 };

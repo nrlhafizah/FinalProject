@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\project;
-use App\Models\Staff;
 use App\Models\User;
 
 class homeControl extends Controller
@@ -24,9 +23,15 @@ class homeControl extends Controller
         return view('admin.createproject',['data'=>$data]);
     }
 
+    public function showDetail($project_id)
+    {
+        $data=Project::find($project_id);
+        return view('admin.detail',['data'=>$data]);
+    }
+
     function showlist()
     {
-        $data=Staff::all();
+        $data=Project::all();
         return view("admin.list",compact("data"));
 
     }
@@ -60,19 +65,7 @@ class homeControl extends Controller
         return view("staff.listproject",['x'=>$x]);
     }
 
-    function listonly()
-    {
-        
-        $id=Auth::user()->id;
-        $lead=project::all('project_leader')->first();
-
-        if($id==$lead->project_leader)
-        {
-            $data=$lead->project;
-            return view('staff.listproject',['data'=>$data]);
-        }
-      
-    }
+    
 
     function redirectFunct()
     {

@@ -38,13 +38,7 @@
                             List Project
                         </a>
                     </li>
-                    <li>
-                        <a href="{{url('/updateproj')}}">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Update Progress
-                        </a>
-                    </li>
+        
                     @auth
                     <li>
                         <a href="{{ route('logout') }}" class="logout" onclick = "event.preventDefault();

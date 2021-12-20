@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,10 +7,10 @@
         <title>URND</title>
 
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="test/css/bootstrap.min.css">  
-        <link rel="stylesheet" href="test/css/fontAwesome.css">
-        <link rel="stylesheet" href="test/css/templatemo-style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{ asset ('test/css/bootstrap.min.css') }}" />  
+        <link rel="stylesheet" href="{{ asset ('test/css/fontAwesome.css') }}" />
+        <link rel="stylesheet" href="{{ asset ('test/css/templatemo-style.css')}}" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 <style>
 
@@ -41,13 +42,12 @@
   
 }
 
-
 table {
 	text-align: left;
 	font-family: 'Spartan', sans-serif;
 	font-size: 15px;
 	background-color: white;
-	margin:-25px -100px 30px 200px;
+	margin:-25px 100px 20px 200px;
 	border: 10px ;
 	padding: 10px;
 	width: 90%;
@@ -87,7 +87,6 @@ table td {
 	font-family: 'Spartan', sans-serif;
 	
 	
-	
 	/*box style*/
 	width: 15%;
 	height: 8%;
@@ -107,7 +106,6 @@ table td {
 	-webkit-box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
 }
-
 
 /*button hover*/
 .btn button:hover {
@@ -192,8 +190,6 @@ form button.src-btn a:hover {text-decoration:underline;}
 	margin-left: 32em;
 }
 
-
-
 </style>
 
     </head>
@@ -206,7 +202,7 @@ form button.src-btn a:hover {text-decoration:underline;}
             
             <nav>
                 <ul>
-                    <p>Welcome, Unitenians!</p>
+                    <p>Welcome, Project Manager!</p>
                     <li>
                         <a href="/redirect">
                             <span class="rect"></span>
@@ -215,13 +211,19 @@ form button.src-btn a:hover {text-decoration:underline;}
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('/listproject')}}">
+                        <a href="{{url('/createproject')}}">
                             <span class="rect"></span>
                             <span class="circle"></span>
-                            List Project
+                            Create Project
                         </a>
                     </li>
-                   
+                    <li>
+                        <a href="{{url('/list')}}">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            View Progress
+                        </a>
+                    </li>
                     @auth
                     <li>
                         <a href="{{ route('logout') }}" class="logout" onclick = "event.preventDefault();
@@ -251,51 +253,50 @@ form button.src-btn a:hover {text-decoration:underline;}
                     <div class="img-fill">
                     <div class="image">
                     <div class="info">
-					<table>
-    <thead>
-		
+
+<table>
+
         <tr>
             <th>ID</th>
-            <th>Category</th>
-			<th>Project Name</th>
-			<th>Project Leader</th>
-            <th></th>
-
+            <td>{{$data['project_id']}}</td>
         </tr>
-    </thead>
-    <tbody>
-							@foreach($x as $view)
-							  <tr>
-							  
-							  	<td>{{$view->project_id}}</td>
-								  <td>
-									  @if($view->project_category=='1')
-
-									  Research
-
-									  @else
-
-									  Consultancy
-
-									  @endif
-								  </td>
-								  <td>{{$view->project_name}}</td>
-								  <td>
-									  @if($view->project_leader==$view->id)
-
-									  {{$view->name}}
-
-									  @endif
-								  </td>
-                                  <td><button><a href={{"upd/".$view->project_id}}>Edit</a></button></td>
-                                </tr>
-							@endforeach
-							
-							</tbody>
+        <tr>
+            <th>Project Category</th>
+            <td>{{$data['project_name']}}</td>
+        </tr>
+        <tr>
+            <th>Start Date</th>
+            <td>{{$data['start_date']}}</td>
+        </tr>
+        <tr>
+            <th>End Date</th>
+            <td>{{$data['end_date']}}</td>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <td>{{$data->duration}}</td>
+        </tr>
+        <tr>
+            <th>Cost</th>
+            <td>{{$data->cost}}</td>
+        </tr>
+        <tr>
+            <th>Client</th>
+            <td>{{$data->client}}</td>
+        </tr>
+        <tr>
+            <th>Stage</th>
+            <td>{{$data->stage}}</td>
+        </tr>
+        <tr>
+            <th>Progress</th>
+            <td>{{$data->progress}}</td>
+        </tr>
+        <tr>
+            <th>Member</th>
+            <td>{{$data['member']}}</td>
+        </tr>
 </table>
-
-
-
 
                         </div>
                     </div>
@@ -303,6 +304,3 @@ form button.src-btn a:hover {text-decoration:underline;}
         </div>
 </body>
 </html>
-
-
-

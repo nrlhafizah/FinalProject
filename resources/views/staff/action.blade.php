@@ -74,41 +74,29 @@ body{
 
 <body>
 
+    <form action="/action" method="post" class="form-container">
+    @csrf
 
-  <form action="/action" method="post" class="form-container">
-
-  <b>Project Name</b><br>
-    <input type="text" value="{{$data->project_name}}"  name="pname" readonly><br>
-      @csrf
-  <label for="members"><b> Team Member</b></label><br><br>
-  <select name="member" width=100 style="width: 460px">
-  @foreach($userdata as $d)
-  @if ($d->usertype=='0')
-  <option value="{{$d->id}}">{{$d->name}}</option>
-  @endif
-  @endforeach
-
-
-</select>
-    </select><br><br>
+    <b>Project Name</b><br>
+    <input type="text" value="{{$data['project_name']}}"  name="pname" readonly><br>
 
     <b>Start Date</b><br>
-    <input type="date" placeholder="Enter Email" name="sdate" required><br><br>
+    <input type="date" placeholder="Enter Email" name="sdate" value="{{$data['start_date']}}" required><br><br>
 
     <b>End Date</b><br>
-    <input type="date" placeholder="Enter Password" name="edate" required><br><br>
+    <input type="date" placeholder="Enter Password" name="edate" value="{{$data['end_date']}}"required><br><br>
 
-    <b>Duration</b>
-    <input type="text" placeholder="Enter Duration" name="duration" required>
+    <b>Duration (In Month)</b>
+    <input type="text" placeholder="Enter Duration" name="duration" value="{{$data['duration']}}"required>
 
-    <label for="psw"><b>Cost</b></label>
-    <input type="text" placeholder="Enter Cost" name="cost" required>
+    <label for="psw"><b>Cost (In RM)</b></label>
+    <input type="text" placeholder="Enter Cost" name="cost" value="{{$data->cost}}"required>
 
     <label for="psw"><b>Client</b></label>
-    <input type="text" placeholder="Enter Client" name="client" required>
+    <input type="text" placeholder="Enter Client" name="client" value="{{$data->client}}"required>
 
     <b>Project Stage</b><br>
-									<select width=200 style="width: 200px " name="stage" id="stage">
+									<select width=200 style="width: 200px " name="stage" id="stage" value="{{$data->stage}}">
     								<option value="Inception">Inception</option>
   									<option value="Milestone 1">Milestone 1</option>
   									<option value="Milestone 2">Milestone 2</option>
@@ -116,15 +104,25 @@ body{
 									  <option value="Closing">Closing</option>
 									</select><br><br>
   <b>Project Progress</b><br>						
-									  <select width=200 style="width: 200px" name="progress" id="progress">
+									  <select width=200 style="width: 200px" name="progress" id="progress" value="{{$data->progress}}">
     								<option value="On track">On track</option>
   									<option value="Delayed">Delayed</option>
   									<option value="Extended">Extended</option>
   									<option value="Completed">Completed</option>
 									</select><br><br>
+
+  <label for="members"><b> Team Member</b></label><br><br>
+   
+    @foreach($user as $d)
+    @if ($d->usertype=='0')
+    <input type="checkbox" id="member" name="member" value="{{$d->id}}">
+    <label> {{$d->name}}</label><br>
+ 
+    @endif
+    @endforeach
 			
 
-    <button type="submit">UPDATE</button>
+    <br><br><button type="submit" name="project_id" value="{{$data->project_id}}">UPDATE</button>
     
   </form>
 </div>
