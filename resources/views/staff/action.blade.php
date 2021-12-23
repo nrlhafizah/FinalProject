@@ -78,16 +78,13 @@ body{
     @csrf
 
     <b>Project Name</b><br>
-    <input type="text" value="{{$data['project_name']}}"  name="pname" readonly><br>
+    <input type="text" value="{{$data->project_name}}"  name="pname" readonly><br>
 
     <b>Start Date</b><br>
-    <input type="date" placeholder="Enter Email" name="sdate" value="{{$data['start_date']}}" required><br><br>
+    <input type="date" placeholder="Enter Email" name="sdate" value="{{$data->start_date}}" required><br><br>
 
     <b>End Date</b><br>
-    <input type="date" placeholder="Enter Password" name="edate" value="{{$data['end_date']}}"required><br><br>
-
-    <b>Duration (In Month)</b>
-    <input type="text" placeholder="Enter Duration" name="duration" value="{{$data['duration']}}"required>
+    <input type="date" placeholder="Enter Password" name="edate" value="{{$data->end_date}}"required><br><br>
 
     <label for="psw"><b>Cost (In RM)</b></label>
     <input type="text" placeholder="Enter Cost" name="cost" value="{{$data->cost}}"required>
@@ -113,9 +110,9 @@ body{
 
   <label for="members"><b> Team Member</b></label><br><br>
    
-    @foreach($user as $d)
+    @foreach($x as $d)
     @if ($d->usertype=='0')
-    <input type="checkbox" id="member" name="member" value="{{$d->id}}">
+    <input type="checkbox" id="member" name="member[]" value="{{$d->id}}">
     <label> {{$d->name}}</label><br>
  
     @endif
@@ -123,6 +120,7 @@ body{
 			
 
     <br><br><button type="submit" name="project_id" value="{{$data->project_id}}">UPDATE</button>
+
     
   </form>
 </div>

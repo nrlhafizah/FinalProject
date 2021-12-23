@@ -287,7 +287,11 @@ form button.src-btn a:hover {text-decoration:underline;}
 
 									  @endif
 								  </td>
-                                  <td><button><a href={{"upd/".$view->project_id}}>Edit</a></button></td>
+								  @if($view->project_leader == auth()->id())
+                                  <td><button><a href={{"/upd".$view->project_id}}>Edit</button></td></a>
+								  @else
+								  <td>Not Allowed</td>
+								  @endif
                                 </tr>
 							@endforeach
 							

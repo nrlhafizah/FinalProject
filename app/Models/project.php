@@ -11,10 +11,8 @@ class project extends Model
     public $timestamps = false;
     public $table="project";
 
-    protected $primaryKey = 'project_id';
+    protected $primaryKey ="project_id";
 
-    protected $fillable = [
-        'project_category', 'project_name', 'project_leader', 'member', 'start_date', 
-         'end_date', 'duration', 'cost', 'client', 'stage', 'progress'
-    ];
+    protected $fillable = ['project_id', 'project_category', 'project_name', 'project_leader', 'member', 'start_date', 'end_date', 'duration', 'cost', 'client', 'stage', 'progress'];
+
 };

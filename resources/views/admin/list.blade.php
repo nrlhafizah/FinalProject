@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,7 +47,7 @@ table {
 	font-family: 'Spartan', sans-serif;
 	font-size: 15px;
 	background-color: white;
-	margin:-25px -100px 30px 200px;
+	margin:-25px -150px 30px 200px;
 	border: 10px ;
 	padding: 10px;
 	width: 90%;
@@ -108,6 +107,7 @@ table td {
 	-webkit-box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
 }
+
 
 /*button hover*/
 .btn button:hover {
@@ -192,6 +192,8 @@ form button.src-btn a:hover {text-decoration:underline;}
 	margin-left: 32em;
 }
 
+
+
 </style>
 
     </head>
@@ -205,7 +207,7 @@ form button.src-btn a:hover {text-decoration:underline;}
             <nav>
                 <ul>
                     <p>Welcome, Project Manager!</p>
-                    <li>
+					<li>
                         <a href="/redirect">
                             <span class="rect"></span>
                             <span class="circle"></span>
@@ -226,6 +228,7 @@ form button.src-btn a:hover {text-decoration:underline;}
                             View Progress
                         </a>
                     </li>
+                   
                     @auth
                     <li>
                         <a href="{{ route('logout') }}" class="logout" onclick = "event.preventDefault();
@@ -264,6 +267,8 @@ form button.src-btn a:hover {text-decoration:underline;}
 			<th>Project Name</th>
 			<th>Project Leader</th>
             <th></th>
+			<th></th>
+			
 
         </tr>
     </thead>
@@ -291,12 +296,17 @@ form button.src-btn a:hover {text-decoration:underline;}
 
 									  @endif
 								  </td>
-                                  <td><a href={{"det/".$view->project_id}}>Detail</a></button></td>
+                                  <td><button><a href={{"/det".$view->id}}>Detail</button></td></a>
+								  <td><button><a href={{"/del".$view->project_id}}>Delete</button></td></a>
+								 
                                 </tr>
 							@endforeach
 							
 							</tbody>
 </table>
+
+
+
 
                         </div>
                     </div>
@@ -304,5 +314,6 @@ form button.src-btn a:hover {text-decoration:underline;}
         </div>
 </body>
 </html>
+
 
 

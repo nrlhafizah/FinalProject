@@ -38,7 +38,7 @@
                             List Project
                         </a>
                     </li>
-        
+                   
                     @auth
                     <li>
                         <a href="{{ route('logout') }}" class="logout" onclick = "event.preventDefault();

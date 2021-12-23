@@ -18,14 +18,6 @@ class CreateProjectTable extends Migration
             $table->string('project_category');
             $table->string('project_name');
             $table->string('project_leader');
-            $table->string('member')->nullable();
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
-            $table->integer('duration')->nullable();
-            $table->integer('cost')->nullable();
-            $table->string('client')->nullable();
-            $table->string('stage')->nullable();
-            $table->string('process')->nullable();
             $table->timestamps();
         });
     }

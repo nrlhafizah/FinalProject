@@ -274,7 +274,7 @@ form button.src-btn a:hover {text-decoration:underline;}
         </tr>
         <tr>
             <th>Duration</th>
-            <td>{{$data->duration}}</td>
+            <td>{{$data->duration}} month</td>
         </tr>
         <tr>
             <th>Cost</th>
@@ -293,9 +293,23 @@ form button.src-btn a:hover {text-decoration:underline;}
             <td>{{$data->progress}}</td>
         </tr>
         <tr>
-            <th>Member</th>
-            <td>{{$data['member']}}</td>
-        </tr>
+        <th>Member</th><td>
+        @foreach($x as $d)
+
+        @foreach(explode(',', $data->member) as $string)
+
+        @if($string==$d->id)
+
+        <ul>
+        <li>{{ $d->name }}</li>
+        </ul>
+
+        @endif
+
+        @endforeach  
+
+        @endforeach  
+</td></tr>
 </table>
 
                         </div>

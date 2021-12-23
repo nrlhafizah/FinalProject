@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\project;
+use App\Models\Project;
 use App\Models\User;
 
 class homeControl extends Controller
@@ -23,16 +23,21 @@ class homeControl extends Controller
         return view('admin.createproject',['data'=>$data]);
     }
 
-    public function showDetail($project_id)
+    function showlist($project_id)
     {
         $data=Project::find($project_id);
-        return view('admin.detail',['data'=>$data]);
+        $x=DB::table('users')
+        ->join('project','users.id', "=", "project.project_leader")->get();
+        return view("admin.detail",['data' => $data, 'x' => $x]);
+
     }
 
-    function showlist()
+    function showDetail($project_id)
     {
-        $data=Project::all();
-        return view("admin.list",compact("data"));
+        $data=Project::find($project_id);
+        $x=DB::table('users')
+        ->join('project','users.id', "=", "project.project_leader")->get();
+        return view("staff.action",['data'=>$data, 'x' => $x]);
 
     }
 
@@ -49,6 +54,7 @@ class homeControl extends Controller
         return redirect('create');
     }
 
+  
     function leader()
     {
         
@@ -65,7 +71,6 @@ class homeControl extends Controller
         return view("staff.listproject",['x'=>$x]);
     }
 
-    
 
     function redirectFunct()
     {
