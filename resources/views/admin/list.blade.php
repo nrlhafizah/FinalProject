@@ -296,7 +296,7 @@ form button.src-btn a:hover {text-decoration:underline;}
 
 									  @endif
 								  </td>
-                                  <td><button><a href={{"/det".$view->id}}>Detail</button></td></a>
+                                  <td><button><a href={{"/det".$view->project_id}}>Detail</button></td></a>
 								  <td><button><a href={{"/del".$view->project_id}}>Delete</button></td></a>
 								 
                                 </tr>

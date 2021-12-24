@@ -258,19 +258,19 @@ form button.src-btn a:hover {text-decoration:underline;}
 
         <tr>
             <th>ID</th>
-            <td>{{$data['project_id']}}</td>
+            <td>{{$data->project_id}}</td>
         </tr>
         <tr>
             <th>Project Category</th>
-            <td>{{$data['project_name']}}</td>
+            <td>{{$data->project_name}}</td>
         </tr>
         <tr>
             <th>Start Date</th>
-            <td>{{$data['start_date']}}</td>
+            <td>{{$data->start_date}}</td>
         </tr>
         <tr>
             <th>End Date</th>
-            <td>{{$data['end_date']}}</td>
+            <td>{{$data->end_date}}</td>
         </tr>
         <tr>
             <th>Duration</th>

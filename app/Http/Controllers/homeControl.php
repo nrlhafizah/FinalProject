@@ -28,7 +28,7 @@ class homeControl extends Controller
         $data=Project::find($project_id);
         $x=DB::table('users')
         ->join('project','users.id', "=", "project.project_leader")->get();
-        return view("admin.detail",['data' => $data, 'x' => $x]);
+        return view("admin.detail",['data'=>$data, 'x' => $x]);
 
     }
 
